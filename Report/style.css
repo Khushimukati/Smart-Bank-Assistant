@@ -1,0 +1,205 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  scroll-behavior:smooth;
+}
+
+/* Navbar */
+header{
+  position:fixed;
+  width:100%;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  padding:15px 8%;
+  z-index:1000;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#00f2fe;
+}
+
+.login-btn{
+  background:#00f2fe;
+  border:none;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:120px 8%;
+}
+
+.hero-text{
+  max-width:500px;
+  animation:fadeIn 1.5s ease-in;
+}
+
+.hero-text h1 span{
+  color:#00f2fe;
+}
+
+.hero-img img{
+  width:450px;
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* Services */
+.services{
+  padding:80px 8%;
+  text-align:center;
+}
+
+.service-container{
+  display:flex;
+  gap:30px;
+  margin-top:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.card{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:15px;
+  width:250px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  background:rgba(0,242,254,0.2);
+}
+
+/* Stats */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  padding:60px 8%;
+  text-align:center;
+  background:rgba(0,0,0,0.3);
+}
+
+.counter{
+  font-size:40px;
+  color:#00f2fe;
+}
+
+/* About & Contact */
+.about, .contact{
+  padding:80px 8%;
+  text-align:center;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:400px;
+  margin:auto;
+}
+
+input, textarea{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+}
+
+button{
+  padding:12px;
+  border:none;
+  background:#00f2fe;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Chatbot Button */
+.chatbot-btn{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#00f2fe;
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:24px;
+  cursor:pointer;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-img img{
+    width:300px;
+    margin-top:30px;
+  }
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#1e3c72;
+    position:absolute;
+    top:70px;
+    right:8%;
+    padding:20px;
+    border-radius:10px;
+  }
+  .menu-toggle{
+    display:block;
+  }
+}

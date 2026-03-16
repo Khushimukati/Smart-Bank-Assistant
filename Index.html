@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Bank Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">SmartBank AI</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="themeToggle">🌙</button>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Next Generation Smart Banking</h1>
+        <p>Secure • Fast • AI Powered Assistant</p>
+        <button onclick="scrollToSection('services')">Explore Services</button>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <h2>Our Premium Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>💰 Instant Transfers</h3>
+            <p>Transfer money securely in seconds.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Expense Tracking</h3>
+            <p>AI-powered spending insights.</p>
+        </div>
+        <div class="card">
+            <h3>🔐 Secure Payments</h3>
+            <p>Advanced encryption system.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Dashboard -->
+<section class="dashboard" id="dashboard">
+    <h2>Your Smart Dashboard</h2>
+    <div class="dashboard-box">
+        <div class="balance">
+            ₹ <span id="balance">0</span>
+        </div>
+        <button onclick="addMoney()">Add ₹1000</button>
+        <button onclick="deductMoney()">Spend ₹500</button>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return submitForm()">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Chatbot -->
+<div class="chat-icon" onclick="toggleChat()">💬</div>
+
+<div class="chatbox" id="chatbox">
+    <div class="chat-header">SmartBank Assistant</div>
+    <div class="chat-body" id="chatBody"></div>
+    <input type="text" id="chatInput" placeholder="Type message..." onkeypress="handleKey(event)">
+</div>
+
+<footer>
+    © 2026 Smart Bank Assistant | Premium Frontend
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

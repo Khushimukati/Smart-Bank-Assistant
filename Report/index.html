@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaBank | Smart Digital Banking</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">NovaBank</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <button class="login-btn">Login</button>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Future of <span>Digital Banking</span></h1>
+      <p>Secure. Fast. Intelligent banking powered by AI technology.</p>
+      <button class="primary-btn">Open Account</button>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1556742400-b5b7c512f3b3" alt="Banking" />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="card">
+        <h3>Personal Banking</h3>
+        <p>Smart savings and checking accounts.</p>
+      </div>
+      <div class="card">
+        <h3>Business Loans</h3>
+        <p>Flexible financing for your growth.</p>
+      </div>
+      <div class="card">
+        <h3>AI Support</h3>
+        <p>24/7 chatbot powered support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat">
+      <h2 class="counter" data-target="50000">0</h2>
+      <p>Happy Customers</p>
+    </div>
+    <div class="stat">
+      <h2 class="counter" data-target="120">0</h2>
+      <p>Branches</p>
+    </div>
+    <div class="stat">
+      <h2 class="counter" data-target="15">0</h2>
+      <p>Years Experience</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>Why Choose NovaBank?</h2>
+    <p>We combine innovation with trust. Our AI-powered banking ensures safe transactions and intelligent financial guidance.</p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Watson Chatbot Button -->
+  <div class="chatbot-btn" onclick="openChatbot()">💬</div>
+
+  <!-- Watson Integration Placeholder -->
+  <!-- Paste your IBM Watson Assistant Script Here -->
+
+  <script src="script.js"></script>
+  <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "06e6b750-c51d-436a-b6bc-dc46c3c6bc47", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "51e6e5c4-7ce8-4210-a576-38bd1593b313", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>

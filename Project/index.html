@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Bank AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🏦 Smart Bank AI Assistant</h1>
+    <p>Your Intelligent Banking Partner</p>
+</header>
+
+<section class="hero">
+    <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc" alt="Bank">
+    <div class="hero-text">
+        <h2>Welcome to Smart Banking</h2>
+        <p>Ask anything about loans, balance, accounts, cards & more.</p>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-box">
+        <h3>💰 Balance Inquiry</h3>
+        <p>Check your account balance instantly.</p>
+    </div>
+    <div class="feature-box">
+        <h3>📊 Loan Information</h3>
+        <p>Home, Car, Personal Loan details.</p>
+    </div>
+    <div class="feature-box">
+        <h3>🔐 Secure Banking</h3>
+        <p>Safe and encrypted transactions.</p>
+    </div>
+</section>
+
+<section class="chat-section">
+    <h2>🤖 Smart Bank Assistant</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Ask your banking question...">
+    <button onclick="sendMessage()">Send</button>
+</section>
+
+<footer>
+    <p>© 2026 Smart Bank AI | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+<!-- IBM Watson Assistant Chat -->
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "YOUR_INTEGRATION_ID",
+    region: "us-south",
+    serviceInstanceID: "YOUR_SERVICE_ID",
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/latest/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "06e6b750-c51d-436a-b6bc-dc46c3c6bc47", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "51e6e5c4-7ce8-4210-a576-38bd1593b313", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
